@@ -15,6 +15,7 @@
 		877BE6AB1A83F7CE00FFCCFD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877BE6A91A83F7CE00FFCCFD /* LaunchScreen.xib */; };
 		877BE6B71A83F7CE00FFCCFD /* ABCIntroViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 877BE6B61A83F7CE00FFCCFD /* ABCIntroViewTests.m */; };
 		877BE6C21A83F81D00FFCCFD /* ABCIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 877BE6C11A83F81D00FFCCFD /* ABCIntroView.m */; };
+		EF11C5AE1B90350C00FD16E0 /* CoreOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF11C5AD1B90350C00FD16E0 /* CoreOnboardingView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		877BE6B61A83F7CE00FFCCFD /* ABCIntroViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCIntroViewTests.m; sourceTree = "<group>"; };
 		877BE6C01A83F81D00FFCCFD /* ABCIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCIntroView.h; sourceTree = "<group>"; };
 		877BE6C11A83F81D00FFCCFD /* ABCIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCIntroView.m; sourceTree = "<group>"; };
+		EF11C5AD1B90350C00FD16E0 /* CoreOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreOnboardingView.swift; sourceTree = "<group>"; };
+		EF11C5AF1B903C2B00FD16E0 /* ABCIntroView-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ABCIntroView-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 			children = (
 				877BE69B1A83F7CE00FFCCFD /* Info.plist */,
 				877BE69C1A83F7CE00FFCCFD /* main.m */,
+				EF11C5AF1B903C2B00FD16E0 /* ABCIntroView-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -128,6 +132,7 @@
 			children = (
 				877BE6C01A83F81D00FFCCFD /* ABCIntroView.h */,
 				877BE6C11A83F81D00FFCCFD /* ABCIntroView.m */,
+				EF11C5AD1B90350C00FD16E0 /* CoreOnboardingView.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -176,7 +181,8 @@
 		877BE68F1A83F7CE00FFCCFD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Adam Cooper";
 				TargetAttributes = {
 					877BE6961A83F7CE00FFCCFD = {
@@ -234,6 +240,7 @@
 			files = (
 				877BE6A31A83F7CE00FFCCFD /* ViewController.m in Sources */,
 				877BE6C21A83F81D00FFCCFD /* ABCIntroView.m in Sources */,
+				EF11C5AE1B90350C00FD16E0 /* CoreOnboardingView.swift in Sources */,
 				877BE6A01A83F7CE00FFCCFD /* AppDelegate.m in Sources */,
 				877BE69D1A83F7CE00FFCCFD /* main.m in Sources */,
 			);
@@ -297,6 +304,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -359,9 +367,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ABCIntroView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adamCooper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ABCIntroView/ABCIntroView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -369,9 +381,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ABCIntroView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adamCooper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ABCIntroView/ABCIntroView-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -389,6 +404,7 @@
 				);
 				INFOPLIST_FILE = ABCIntroViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adamCooper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ABCIntroView.app/ABCIntroView";
 			};
@@ -404,6 +420,7 @@
 				);
 				INFOPLIST_FILE = ABCIntroViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adamCooper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ABCIntroView.app/ABCIntroView";
 			};
